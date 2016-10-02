@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+<script>
+window.onload=function(){
+		var omain=document.getElementById("foot");
+		var oul=omain.getElementsByTagName("ul")[0];
+		var lis=omain.getElementsByTagName("li");
+		var speed=2;
+		oul.innerHTML=oul.innerHTML+oul.innerHTML;
+		oul.style.width=lis[0].offsetWidth*lis.length+"px";
+		function move(){
+			// 往左边移动
+			if(oul.offsetLeft<-oul.offsetWidth/2){
+				oul.style.left='0';
+			}
+			// oul.style.left=oul.offsetLeft-2+"px";
+			// 往右边移动
+			if(oul.offsetLeft>0){
+				oul.style.left=-oul.offsetWidth/2+"px";
+			}
+			    	oul.style.left=oul.offsetLeft+speed+"px";
+		
+		}
+		var timer=setInterval(move,30);
+		omain.onmouseover=function(){
+			clearInterval(timer);
+		}
+		omain.onmouseout=function(){
+			timer=setInterval(move,30);
+		}
+		document.getElementsByTagName("a")[0].onclick=function(){
+			speed=-5;
+		}
+		document.getElementsByTagName("a")[1].onclick=function(){
+			speed=5;
+		}
+	};
+</script>
+
+</head>
+<body>
+	<div id="main">
+		<ul>
+			<li><span></span><a href="#">我的首页</a></li>
+			<li><span></span><a href="#1">我的简介</a></li>
+			<li><span></span><a href="#2">我的技能</a></li>
+			<li><span></span><a href="#3">我的相册</a></li>
+			<li><span></span><a href="#4">联系方式</a></li>
+		</ul>
+	</div>
+	<div class="header">
+		<div class="header_face">
+			<img src="images/photo-5.png" alt="">
+			<span>欢迎来到我的主页！</span>
+			<audio controls="controls"loop="loop">
+				<source src="One Direction - What Makes You Beautiful.mp3">
+				</source>
+			</audio>
+		</div>
+	</div>
+	<a name="1">
+		<div class="person">
+			<span>个人简历</span>
+			<ul class="left">
+				<li>姓名：俞琳</li>
+				<li>性别：女</li>
+				<li>年龄：22岁</li>
+				<li>学校：江西农业大学</li>
+				<li>专业：软件工程</li>
+				<li>地址：江西上饶</li>
+			</ul>
+			<ul class="right">
+				<li>爱好：看电视,听歌,逛街</li>
+				<li>星座：天蝎座</li>
+				<li>最喜欢的颜色：黑色,白色,粉红色</li>
+				<li>最喜欢的运动：跑步，打羽毛球</li>
+				<li>理想：开心快乐的过好每一天</li>
+			</ul>
+		</div>
+	</a>
+	<a name="2">
+		<div class="skill">
+		 <span>我的技能</span>
+			<ul class="skill_content">
+				<li><img src="images/html-1.png" alt="">
+				<a href="">&nbsp;&nbsp;html是一门很有趣的课程,
+					学好这项技能是很重要的</a></li>
+				<li><img src="images/css.png" alt="">
+				<a href="">&nbsp;&nbsp;css是一门很有趣的课程,学会了这门技术使得网页更加炫丽多彩</a></li>
+				<li><img src="images/ps.png" alt="">
+				<a href="">&nbsp;&nbsp;ps是一门很有趣的课程,可以让我们有很好的动手能力，还能把图片进行美化</a></li>
+				<li><img src="images/jquety.png" alt="">
+				<a href="">&nbsp;&nbsp;jquery是一门很有趣的课程，可以使得网页的兼容性变得更加强大</a></li>
+				<li><img src="images/js.png" alt="">
+				<a href="">&nbsp;&nbsp;js是一门很有趣的课程，这是前端课程中最厉害的一个科目</a></li>
+			</ul>
+		</div>
+	</a>
+	
+	<a name="3">
+		<div class="photo">
+		<span>我的相册</span>
+			<div id="foot">
+				<ul>
+					<li><img src="images/me.png" alt=""></li>
+					<li><img src="images/me-1.png" alt=""></li>
+					<li><img src="images/me-2.png" alt=""></li>
+					<li><img src="images/me-3.png" alt=""></li>
+				</ul>
+			</div>
+	    </div>
+	</a>
+	
+	<a name="4">
+		<div class="down">
+		<span>联系方式</span>
+			<ul class="left">
+				<li>QQ:1137944722</li>
+				<li>TEL:18770913984</li>
+				<li>地址:北京市昌平区沙河</li>
+				<li>Email:1137944722@qq.com</li>
+				<li>学校:北京科技职业学院</li>
+			</ul>
+			<ul class="right">
+				<li><label>您的姓名：</label><input type="text" placeholder="在此输入您的大名"><br></li>
+				<li><label>您的性别:</label><input type="radio" name="sex"> 男<input type="radio" name="sex"> 女 <br></li>
+				<li><label>您的年龄：</label><input type="number" value="20" step="1" min="0" max="100"><br></li>
+				<li><label>您的联系方式:</label><input type="text" placeholder="在此输入联系方式" list="co"><br></li>
+				<li><label>留言信息：</label><textarea cols="20" rows="5">您想告诉我点什么</textarea><br><input type="submit"> <input type="reset"></li>
+			</ul>
+	    </div>
+	</a>
+	
+	<a href="#" class="back"><span>回顶部</span></a>
+	
+	
+</body>
+</html>
